@@ -6,7 +6,9 @@ def factorial(n):
 
 # Fibonacci function to find nth term of series
 def fib(n): #Recursive
-    if n <= 1:
+    if n <= 0:
+        return 0
+    if n == 1:
         return 1
     return fib(n-1) + fib(n-2)
 

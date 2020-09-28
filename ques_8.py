@@ -78,25 +78,18 @@ if __name__ == "__main__":
 		print("All elements are numbers")
 	else:
 		print("All elements are not numbers")
-	
 	count_odd(l)
-	
 	largest_str(l)
-	
 	print("Reversed list:", end=" ")
 	display_reverse(l)
-	
 	item = input("\nEnter an element: ")
 	find_item(item,l)
-	
 	remove_item(item, l)
-	
 	print("Sorted in Descending Order: ")
 	print(sort_desc(l))
 	l2 = []
 	n = int(input("Enter the size of new list: "))
 	for i in range(0, n, 1):
 		l2.append(input("Enter element: "))
-
 	common(l, l2)
 	

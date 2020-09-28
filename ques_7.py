@@ -7,9 +7,9 @@ def maxof_three():
     str2= input("Enter string 2: ")
     str3 = input("Enter string 3: ")
     maxstr = ""
-    if len(str1) > len(str2) and len(str1) > len(str3):
+    if str1 > str2 and str1 > str3:
         maxstr = str1
-    elif len(str2) > len(str1) and len(str2) > len(str3):
+    elif str2 > str1 and str2 > str3:
         maxstr = str2
     else:
         maxstr = str3
@@ -45,31 +45,33 @@ def palindrome():
     else:
         print(f"{str} is not a palindrome")
 
+def main():
+    print("\nMenu")
+    print("-"*20)
+    print("1. Length of string")
+    print("2. Maximum of three strings")
+    print("3. Replace vowels with '#'")
+    print("4. No. of words")
+    print("5. Check Palindrome")
+    print("6. Exit")
+    print("-"*20)
+    option = input("Your choice: ")
+
+    switcher = {
+        '1' : len_str,
+        '2' : maxof_three,
+        '3' : replace_vowels,
+        '4' : numofwords,
+        '5' : palindrome,
+        '6' : quit
+    }
+    func = switcher.get(option, lambda: print("Invalid Choice!"))
+    func()
+
 if __name__ == "__main__":
 
     ch = 'y'
     while ch.lower() == 'y':
-        print("\nMenu")
-        print("-"*20)
-        print("1. Length of string")
-        print("2. Maximum of three strings")
-        print("3. Replace vowels with '#'")
-        print("4. No. of words")
-        print("5. Check Palindrome")
-        print("6. Exit")
-        print("-"*20)
-        option = input("Your choice: ")
-
-        switcher = {
-            '1' : len_str,
-            '2' : maxof_three,
-            '3' : replace_vowels,
-            '4' : numofwords,
-            '5' : palindrome,
-            '6' : quit
-        }
-        func = switcher.get(option, lambda: print("Invalid Choice!"))
-        func()
-
+        main()
         ch = input("\nWant to continue? [y/n]: ")
         
