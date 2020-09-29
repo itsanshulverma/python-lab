@@ -34,9 +34,11 @@ def largest_str(l):
 def display_reverse(l):
 	for i in range(len(l)-1, -1, -1):
 		print(l[i], end=" ")
+	return
 
 # Find a specific item in the list
-def find_item(item, l):
+def find_item(l):
+	item = input("\nEnter an element: ")
 	for i in range(0, len(l), 1):
 		if item == l[i]:
 			print("Item found at index: ", i)
@@ -44,16 +46,18 @@ def find_item(item, l):
 	print("Item not found")
 
 # Remove the specified item in the list
-def remove_item(item, l):
+def remove_item(l):
+	item = input("\nEnter an element: ")
 	for i in range(0, len(l), 1):
 		if item == l[i]:
 			l.remove(item)
 			print("Item removed")
-			return
+	return
 
 # Sort the list in descending order
 def sort_desc(l):
-	return sorted(l, reverse=True)
+	print(sorted(l, reverse=True))
+	return
 	
 # Accept two list and find common members in them
 def common(l1, l2):
@@ -67,29 +71,52 @@ def common(l1, l2):
 	else:
 		print("No common element")
 	return
+	
+def main(l):
+	print("\nMenu")
+	print("-"*20)
+	print("1. Check if all elements are numbers")
+	print("2. Count odd numbers if list is numeric")
+	print("3. Display largest string in list")
+	print("4. Reverse the list")
+	print("5. Find item in list")
+	print("6. Remove item from list")
+	print("7. Sort in Descending order")
+	print("8. Find common elements from another list")
+	print("9. Exit")
+	print("-"*20)
+	option = input("Your choice: ")
+	switcher = {
+        '2' : count_odd,
+        '3' : largest_str,
+        '4' : display_reverse,
+        '5' : find_item,
+        '6' : remove_item,
+        '7' : sort_desc,
+        '8' : common,
+        '9' : quit
+    }
+	if option == '1':
+		if check_int(l):
+			print("All elements are numbers")
+		else:
+			print("All elements are not numbers")
+	elif option == '8':
+		l2 = []
+		n = int(input("Enter the size of new list: "))
+		for i in range(0, n, 1):
+			l2.append(input("Enter element: "))
+			common(l, l2)
+	else:
+		func = switcher.get(option, lambda: print("Invalid Choice!"))
+		func(l)
 
 if __name__ == "__main__":
 	l = []
 	n = int(input("Enter the size of list: "))
 	for i in range(0, n,1):
 		l.append(input("Enter element: "))
-		
-	if check_int(l):
-		print("All elements are numbers")
-	else:
-		print("All elements are not numbers")
-	count_odd(l)
-	largest_str(l)
-	print("Reversed list:", end=" ")
-	display_reverse(l)
-	item = input("\nEnter an element: ")
-	find_item(item,l)
-	remove_item(item, l)
-	print("Sorted in Descending Order: ")
-	print(sort_desc(l))
-	l2 = []
-	n = int(input("Enter the size of new list: "))
-	for i in range(0, n, 1):
-		l2.append(input("Enter element: "))
-	common(l, l2)
-	
+	ch = 'y'
+	while ch.lower() == 'y':
+		main(l)
+		ch = input("\nWant to continue? [y/n]: ")
