@@ -28,7 +28,7 @@ def replace_vowels():
 
 def numofwords():
     str = input("Enter the string: ")
-    str = str.strip + " "
+    str = str.strip() + " "
     count = 0
     for i in range(0, len(str), 1):
         if str[i] == " ":
