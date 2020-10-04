@@ -106,7 +106,7 @@ def main(l):
 		n = int(input("Enter the size of new list: "))
 		for i in range(0, n, 1):
 			l2.append(input("Enter element: "))
-			common(l, l2)
+		common(l, l2)
 	else:
 		func = switcher.get(option, lambda: print("Invalid Choice!"))
 		func(l)

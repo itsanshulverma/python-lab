@@ -13,4 +13,4 @@ if __name__ == "__main__":
     n = int(input("Enter n: "))
     x = int(input("Enter x: "))
     sum = sum_series(x, n)
-    print("Sum of {} terms for x={}: {}".format(n, x, sum))
+    print("\nSum of {} terms of series for x={}: {}".format(n, x, sum))
