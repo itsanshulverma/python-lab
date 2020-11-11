@@ -5,7 +5,7 @@
 
 *Paper Code – 32343307*
 
-#### These codes are written by Anshul Verma (@itsanshulverma) for University of Delhi.
+**These codes are written by Anshul Verma ([@itsanshulverma](https://github.com/itsanshulverma)) for University of Delhi.**
 
 ## List of Practicals
 
@@ -30,7 +30,7 @@ factorial. Return the result as a list.
 5. Write a function that finds the sum of the n terms of the following series.
 Import the factorial function created in question 4.
     
-    ***1 – x^2 /2! + x^4 /4! – x^6 /6! + … x^n /n!***
+    **1 – x^2 /2! + x^4 /4! – x^6 /6! + … x^n /n!**
 
 6. Consider a tuple *t1 ={1 ,2,5,7,9,2,4,6,8,1 0}*. Write a program to perform following operations:
 
